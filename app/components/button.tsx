@@ -11,7 +11,7 @@ const Button = () => {
 
   const handleCheck = () => {
     const randomIndex = Math.floor(Math.random() * animals.length);
-    setResult(animals[randomIndex]);
+    setResult(`Khodam anda adalah ${animals[randomIndex]}`);
   };
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -25,8 +25,10 @@ const Button = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-5xl mb-4 text-purple-600 font-bold shadow-lg">CEK KHODAM ANDA</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+      <h1 className="text-5xl mb-4 text-white font-bold shadow-lg p-4  rounded-lg transform transition duration-500 hover:scale-105">
+        CEK KHODAM ANDA
+      </h1>
       <div className="relative mb-4 w-full max-w-md bg-white p-6 shadow-md rounded-lg">
         <Image src="/cek kodam.jpeg" alt="gambar" layout="responsive" width={500} height={300} />
         <div className="relative mb-4 w-full">
@@ -49,7 +51,7 @@ const Button = () => {
         </div>
         <button 
           onClick={handleCheck} 
-          className="bg-blue-500 text-white p-2 rounded w-full"
+          className="bg-blue-500 text-white p-2 rounded w-full hover:bg-blue-600 transition duration-300"
         >
           Cek Khodam
         </button>
